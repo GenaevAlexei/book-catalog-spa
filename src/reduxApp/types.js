@@ -1,0 +1,9 @@
+export const CREATE_BOOK = 'CREATE_BOOK';
+export const HIDE_FORM = 'HIDE_FORM';
+export const GET_REDACTION_FORM = 'GET_REDACTION_FORM';
+export const DEACTIVATE_CHANGE_FORM = 'DEACTIVATE_CHANGE_FORM';
+export const HIDE_ALERT_SUCCESS = 'HIDE_ALERT_SUCCESS';
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
+export const WILL_CREATE_ACCOUNT = 'WILL_CREATE_ACCOUNT';
+export const WILL_SIGN_IN = 'WILL_SIGN_IN';

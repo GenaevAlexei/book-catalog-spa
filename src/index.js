@@ -1,17 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import * as firebase from 'firebase';
+import {App} from './App';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {rootReducer} from './reduxApp/rootReducer';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyATMJ6bMFCbQ6xtS_iqlMzqh7m4KibMZiw",
+    authDomain: "book-catalog-spa.firebaseapp.com",
+    databaseURL: "https://book-catalog-spa-default-rtdb.firebaseio.com",
+    projectId: "book-catalog-spa",
+    storageBucket: "book-catalog-spa.appspot.com",
+    messagingSenderId: "878044568330",
+    appId: "1:878044568330:web:4851aa5a655179d90df8f3"
+};
+
+firebase.default.initializeApp(firebaseConfig)
+
+const store = createStore(rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
